@@ -10,9 +10,13 @@ var db = require('./config/db');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+const url = db.url;
+const dbName = db.dbName;
+const port = 420;
 var app = express();
 
 // view engine setup
+app.engine('pug', require('pug').__express)
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
@@ -38,21 +42,25 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.render('error'); 
 });
 
-MongoClient.connect(url, function(err, client){
-  assert.equal(null, err);
-  console.log("COnnected successfully to server...")
+// MongoClient.connect(url, function(err, client){
+//   assert.equal(null, err);
+//   console.log("COnnected successfully to server...")
 
-  const database = client.db(name);
-  if (err) return console.log('Mongo DB client error: ${err}')
+//   const database = client.db(dbName);
+//   if (err) return console.log('Mongo DB client error: ${err}')
 
-  require('.routes')(app, database);
+//   require('./routes')(app, database);
 
-  app.listen(port, () =>{
-    console.log(`Live on ${port}...`);
-  })
+//   app.listen(port, () =>{
+//     console.log(`Live on ${port}...`);
+//   })
+// })
+
+app.listen(port, () =>{
+      console.log(`Live on ${port}...`);
 })
 
 module.exports = app;
