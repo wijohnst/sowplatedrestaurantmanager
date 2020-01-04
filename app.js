@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var Mongoclient = require('mongodb').MongoClient;
+var MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
 var db = require('./config/db');
 
@@ -40,5 +40,19 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+MongoClient.connect(url, function(err, client){
+  assert.equal(null, err);
+  console.log("COnnected successfully to server...")
+
+  const database = client.db(name);
+  if (err) return console.log('Mongo DB client error: ${err}')
+
+  require('.routes')(app, database);
+
+  app.listen(port, () =>{
+    console.log(`Live on ${port}...`);
+  })
+})
 
 module.exports = app;
