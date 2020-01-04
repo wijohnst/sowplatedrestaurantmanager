@@ -3,15 +3,16 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var MongoClient = require('mongodb').MongoClient;
-var assert = require('assert');
-var db = require('./config/db');
+// var MongoClient = require('mongodb').MongoClient;
+// var assert = require('assert');
+// var db = require('./config/db');
+
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
-const url = db.url;
-const dbName = db.dbName;
+// const url = db.url;
+// const dbName = db.dbName;
 const port = 420;
 var app = express();
 
