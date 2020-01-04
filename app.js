@@ -13,7 +13,7 @@ var usersRouter = require('./routes/users');
 
 // const url = db.url;
 // const dbName = db.dbName;
-const port = 420;
+const port = 80;
 var app = express();
 
 // view engine setup
