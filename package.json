@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "zip": "git archive -v -o myapp.zip --format=zip HEAD"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
