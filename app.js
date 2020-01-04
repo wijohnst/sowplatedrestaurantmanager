@@ -13,7 +13,6 @@ var usersRouter = require('./routes/users');
 
 // const url = db.url;
 // const dbName = db.dbName;
-var port = process.env.PORT || 3000;
 var app = express();
 
 // view engine setup
@@ -60,8 +59,6 @@ app.use(function(err, req, res, next) {
 //   })
 // })
 
-app.listen(port, () =>{
-      console.log(`Live on ${port}...`);
-})
+
 
 module.exports = app;
