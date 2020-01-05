@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "nodemon app.js",
+    "dev": "nodemon ./bin/www",
     "zip": "git archive -v -o myapp.zip --format=zip HEAD"
   },
   "dependencies": {
@@ -12,13 +12,16 @@
     "cookie-parser": "^1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
+    "moment": "^2.24.0",
     "morgan": "^1.9.1",
     "nodemon": "^2.0.2",
     "pug": "^2.0.4"
   },
   "description": "Custom Restaurant Management CRM for SOW Plated",
   "main": "app.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  },
   "author": "Will Johnston - 2020 Electric Lunch Lady Land, llc.",
   "license": "ISC"
 }
