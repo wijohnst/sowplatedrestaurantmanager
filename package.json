@@ -3,16 +3,17 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
-    "dev": "nodemon ./bin/www",
+    "dev": "nodemon app.js",
     "zip": "git archive -v -o myapp.zip --format=zip HEAD"
   },
   "dependencies": {
+    "assert": "^2.0.0",
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "moment": "^2.24.0",
+    "mongodb": "^3.4.1",
     "morgan": "^1.9.1",
     "nodemon": "^2.0.2",
     "pug": "^2.0.4"
