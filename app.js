@@ -31,7 +31,7 @@ const oidc = new ExpressOIDC({
   issuer: `https://${okta.oktaDomain}/oauth2/default`,
   client_id: okta.client,
   client_secret: okta.okta,
-  appBaseUrl: 'http://sowplatedrestaurantmanager-env-1.m2pjgcrr88.us-east-2.elasticbeanstalk.com/',
+  appBaseUrl: 'http://sowplatedrestaurantmanager-env-1.m2pjgcrr88.us-east-2.elasticbeanstalk.com',
   scope: 'openid profile'
 });
 
