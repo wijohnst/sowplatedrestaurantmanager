@@ -1,17 +1,22 @@
-// var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-// var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 var assert = require('assert');
 var app = express();
+
+//MongoDB
 var MongoClient = require('mongodb').MongoClient;
 const dbName = require('./config/dbConfig').dbName;
 const url = require('./config/dbConfig').url;
 
-// app.engine('pug', require('pug').__express)
+//Okta Auth
+const session = require('express-session');
+const { ExpressOIDC } = require('@okta/oidc-middleware');
+const okta = require('./config/okta');
+
+
+app.engine('pug', require('pug').__express)
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
@@ -21,24 +26,23 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.use('/', indexRouter);
-app.use('/users', usersRouter);
- 
-// catch 404 and forward to error handler
-// app.use(function(req, res, next) {
-// next(createError(404));
-// });
+//Okta Middleware
+const oidc = new ExpressOIDC({
+  issuer: `https://${okta.oktaDomain}/oauth2/default`,
+  client_id: okta.client,
+  client_secret: okta.okta,
+  appBaseUrl: 'http://localhost:3000',
+  scope: 'openid profile'
+});
 
-// error handler
-// app.use(function(err, req, res, next) {
-// // set locals, only providing error in development
-// res.locals.message = err.message;
-// res.locals.error = req.app.get('env') === 'development' ? err : {};
+app.use(session({
+  secret: 'purple monkey buttwasher',
+  resave: true,
+  saveUninitialized: false
+}));
 
-// // render the error page
-// res.status(err.status || 500);
-// res.render('error'); 
-// });
+app.use(oidc.router); 
+
 MongoClient.connect(url, function(err, client){
   assert.equal(null,err);
   console.log('Connected successfully to MongoDb...');
@@ -47,10 +51,17 @@ MongoClient.connect(url, function(err, client){
   if (err) return console.log(`Mongo DB Client Error: ${err}`)
 
   require('./routes/index')(app, database)
+}); 
 
+  oidc.on('ready', () =>{
   var port = process.env.PORT || '3000';
   app.listen(port, () =>{
     console.log(`Live on ${port}...`)
   })
-})
+  })
+
+  oidc.on('error', err =>{
+    console.log('Unable to configure ExpressOIDC', err);
+  })
+
 module.exports = app;

@@ -21,7 +21,7 @@ button{
 
 .card{
   display: flex;
-  border-style: solid;
+  /* border-style: solid; */
   border-width: thin;
   border-radius: 5px 5px 5px 5px;
   border-color: #707070;
@@ -35,6 +35,7 @@ button{
 }
 
 .main-display{
+  border-style: solid;
   justify-content: center;
   box-shadow: none;
   min-height: 75vh;
