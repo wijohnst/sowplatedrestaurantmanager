@@ -2,9 +2,9 @@
 //- body
   //- div(class='shadow' id='parent-container')
 div( id='nav-container') 
-  button(class='nav-child') Profile
-  button(class='nav-child') Reports
-  button(class='nav-child') Menu
+  -for(let index in buttons)
+    button(class="nav-child")
+      a(href= buttons[index].link) #{buttons[index].buttonText}
 div(id='display-container')
   div(class='display-card-container') 
     div(class='display-card-child')
