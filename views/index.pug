@@ -3,12 +3,9 @@ html(land='en')
   include head.pug
 body
   div(class="content")
-    div(class="card heading justify-center color") 
-      include sowLogo.pug
-        span(class="heading-text") #{heading}
-    div(class="card main-display flex-col")
-      div(class='card')
-        span #{user}
+    include header.pug
+  div(class="card main-display shadow flex-row")
+    include main-display.pug
   div(class="card footer justify-center color")
     span #{foot}
    
