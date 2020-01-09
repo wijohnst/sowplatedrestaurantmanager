@@ -2,10 +2,6 @@
   display: none;
 }
 
-.force-display{
-  display: flex;
-}
-
 #nav-container{
   background: none;
   background: url("/images/table.png");
