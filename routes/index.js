@@ -18,7 +18,7 @@ app.get('/', (req, res, next) => {
   } else {
     res.send('Please <a href="/login">login</a>');
   }
-});
+}); 
 
 app.get('/menu', (req, res, next) => {
   
