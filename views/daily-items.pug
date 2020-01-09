@@ -15,8 +15,7 @@ body
               div(class='card justify-center')
                 h2 #{soup.name}
               h3 Allergies:
-              div(class='card allergy-container')
-                
+              div(class='card allergy-container' id='soup-allergies')
                 -for (let allergy in soup.allergies)
                   span(class='icon' id='egg') 
         div(class='display-card-container')
@@ -30,7 +29,7 @@ body
                 -for(let ingredient in quiche.ingredients)
                   h3(class='text-spaced') #{quiche.ingredients[ingredient]} -
               h3 Allergies:
-              div(class='card allergy-container')
+              div(class='card allergy-container' id='quiche-allergies')
                 -for (let allergy in quiche.allergies)
                   span(class='icon' id='egg') 
       div(class='display-card-container')
