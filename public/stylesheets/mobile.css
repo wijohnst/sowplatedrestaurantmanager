@@ -3,7 +3,10 @@
 }
 
 #nav-container{
-  /* background-color: hotpink; */
+  background: none;
+  background: url("/images/table.png");
+  background-repeat: no-repeat;
+  background-size: cover;
   border: none;
   display: flex;
   flex-direction: column;

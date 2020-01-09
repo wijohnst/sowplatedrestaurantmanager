@@ -37,8 +37,9 @@ body{
   /* border-style: solid; */
   justify-content: space-evenly;
   box-shadow: none;
-  min-height: 75vh;
+  min-height: 75vh; 
   padding: .5em;
+  flex-wrap: wrap;
 }
 
 .flex-col{
@@ -119,9 +120,9 @@ body{
   background-color: #ebf0ad;
   display: flex;
   justify-content: center;
-  box-shadow: 3px 3px 10px rgba(68,68,68,0.6),
-   -3px -3px 6px rgba(255,255,255,0.9);
-    border-radius: 5px 5px 5px 5px;
+  box-shadow: 3px 3px 10px rgba(68,68,68,0.6);
+   /* -3px -3px 6px rgba(255,255,255,0.9); */
+  border-radius: 5px 5px 5px 5px;
   padding: 20px;
   outline: 0;
 }
@@ -137,30 +138,87 @@ body{
   background: url("/images/table.png");
   background-repeat: no-repeat;
   background-size: cover;
-  display: flex;
-  flex-direction: column;
+  display: flex; 
+  flex-direction: column;  
   flex-grow: 8;
-  justify-content: space-around; 
+  justify-content: center;
+  /* align-items: center; */
 }
 
 .display-card-container{
+  background-color: transparent;
   flex-grow: 1;
   display: flex;
-  flex-direction: row;
-  height: min-content;
+  flex-direction: column; 
   align-content: center;
-  justify-content: space-around;
+  /* width: 800px; */
 }
 
 .display-card-child{
-  background-color: #707070;
-  opacity: 10%;
   margin: 1px;
+  background: rgba(68,68,68,0.25);
+  color: white; 
   border: solid;
   border-width: thin;
   display: flex;
+  flex-direction: row;
   flex-grow: 1;
   justify-content: center;
-  align-content: center;
+  align-items: center;
 }
 
+.daily-items-content{
+  display: flex;
+  flex-grow: 1;
+  flex-direction: row;
+  align-items: center;
+}
+
+.daily-items-names{
+  display: flex;
+  flex-direction: row;
+}
+
+#quiche-ingredients{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#fish-facts-container{
+  background: rgba(68,68,68,0.25);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+}
+
+#fish-fact-card{
+  display: flex;
+  justify-content: center;
+}
+
+#one{
+  background: pink;
+  justify-content: center;
+}
+#two{
+  background: lightgreen;
+  flex-grow: 1;
+}
+
+.gray {
+  color: #707070;
+}
+
+.allergy-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.secondary-color{
+  background: rgba(240,173,236,0.75)
+}

@@ -10,6 +10,7 @@
   "dependencies": {
     "@okta/oidc-middleware": "^2.1.0",
     "assert": "^2.0.0",
+    "axios": "^0.19.1",
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.4",
     "debug": "~2.6.9",
@@ -18,7 +19,6 @@
     "moment": "^2.24.0",
     "mongodb": "^3.4.1",
     "morgan": "^1.9.1",
-    "nodemon": "^2.0.2",
     "pug": "^2.0.4"
   },
   "description": "Custom Restaurant Management CRM for SOW Plated",

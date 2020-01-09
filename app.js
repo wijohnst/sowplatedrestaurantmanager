@@ -31,8 +31,8 @@ const oidc = new ExpressOIDC({
   issuer: `https://${okta.oktaDomain}/oauth2/default`,
   client_id: okta.client,
   client_secret: okta.okta,
-  // appBaseUrl: 'http://localhost:3000',
-  appBaseUrl: 'http://sowplatedrestaurantmanager-env-1.m2pjgcrr88.us-east-2.elasticbeanstalk.com',
+  appBaseUrl: 'http://localhost:3000',
+  // appBaseUrl: 'http://sowplatedrestaurantmanager-env-1.m2pjgcrr88.us-east-2.elasticbeanstalk.com',
   scope: 'openid profile'
 });
 
@@ -44,7 +44,7 @@ app.use(session({
 
 app.use(oidc.router); 
 
-MongoClient.connect(url, function(err, client){
+MongoClient.connect(url,{ useNewUrlParser: true, useUnifiedTopology: true  }, function(err, client){
   assert.equal(null,err);
   console.log('Connected successfully to MongoDb...');
 

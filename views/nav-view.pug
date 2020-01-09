@@ -1,0 +1,4 @@
+div( id='nav-container') 
+  -for(let index in buttons)
+    button(class="nav-child")
+      a(href= buttons[index].link) #{buttons[index].buttonText}
