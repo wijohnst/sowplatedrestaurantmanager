@@ -18,40 +18,40 @@ body
               div(class='card allergy-container' id='soup-allergies')
                 -for (let allergy in soup.allergies)
                   span(class='icon' id='egg') 
-        div(class='display-card-container')
-        div(class='display-card-child')
-          div(class='daily-items-content')
-            div(class='card shadow' id='fish-facts-container')
-              div(class='card justify-center secondary-color gray')
-                h1 Quiche
-              div(id='quiche-ingredients')
-                p -
-                -for(let ingredient in quiche.ingredients)
-                  h3(class='text-spaced') #{quiche.ingredients[ingredient]} -
-              h3 Allergies:
-              div(class='card allergy-container' id='quiche-allergies')
-                -for (let allergy in quiche.allergies)
-                  span(class='icon' id='egg') 
-      div(class='display-card-container')
-        div(class='display-card-child')
-          div(class='daily-items-content')
-            div(class='card shadow' id='fish-facts-container')
-              div(class='card justify-center secondary-color gray')
-                h1 Fish
-              div(class='card justify-center')
-                h2 Species: #{fish.name}
-              div(class='card fish-fact-card')
-                h3 Habitat:
-              div(class='card fish-fact-card')
-                span #{fishFacts.habitat}
-              div(class='card fish-fact-card')
-                h3 Location:
-              div(class='card fish-fact-card')
-                span #{fishFacts.location}
-              div(class='card fish-fact-card')
-                h3 Population:
-              div(class='card fish-fact-card')
-                p #{fishFacts.population}
+      //-   div(class='display-card-container')
+      //-   div(class='display-card-child')
+      //-     div(class='daily-items-content')
+      //-       div(class='card shadow' id='fish-facts-container')
+      //-         div(class='card justify-center secondary-color gray')
+      //-           h1 Quiche
+      //-         div(id='quiche-ingredients')
+      //-           p -
+      //-           -for(let ingredient in quiche.ingredients)
+      //-             h3(class='text-spaced') #{quiche.ingredients[ingredient]} -
+      //-         h3 Allergies:
+      //-         div(class='card allergy-container' id='quiche-allergies')
+      //-           -for (let allergy in quiche.allergies)
+      //-             span(class='icon' id='egg') 
+      //- div(class='display-card-container')
+      //-   div(class='display-card-child')
+      //-     div(class='daily-items-content')
+      //-       div(class='card shadow' id='fish-facts-container')
+      //-         div(class='card justify-center secondary-color gray')
+      //-           h1 Fish
+      //-         div(class='card justify-center')
+      //-           h2 Species: #{fish.name}
+      //-         div(class='card fish-fact-card')
+      //-           h3 Habitat:
+      //-         div(class='card fish-fact-card')
+      //-           span #{fishFacts.habitat}
+      //-         div(class='card fish-fact-card')
+      //-           h3 Location:
+      //-         div(class='card fish-fact-card')
+      //-           span #{fishFacts.location}
+      //-         div(class='card fish-fact-card')
+      //-           h3 Population:
+      //-         div(class='card fish-fact-card')
+      //-           p #{fishFacts.population}
 
   script(src="/javascripts/viewSwitcher.js")
   //- include footer.pug
