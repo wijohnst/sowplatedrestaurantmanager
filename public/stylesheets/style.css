@@ -39,6 +39,7 @@ body{
   box-shadow: none;
   min-height: 75vh; 
   padding: .5em;
+  flex-grow: 1;
   flex-wrap: wrap;
 }
 
@@ -221,4 +222,8 @@ body{
 
 .secondary-color{
   background: rgba(240,173,236,0.75)
+}
+
+.force-display{
+  display: flex;
 }

@@ -1,10 +1,10 @@
-/* #display-container{
+#display-container{
   display: none;
-} */
+}
 
-/* .force-display{
+.force-display{
   display: flex;
-} */
+}
 
 #nav-container{
   background: none;
