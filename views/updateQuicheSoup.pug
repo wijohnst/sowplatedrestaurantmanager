@@ -1,0 +1,19 @@
+doctype html
+html(land="en")
+  include head.pug
+body
+  div(class="content")
+    include header.pug
+    div(class='card form-container')
+      div(class='display-card-child')
+        form(action="/updateDailyItems", method="post" id="select-daily-item-form")
+          div(class='card justify-center secondary-color gray')
+              h1 - Select An Item To Update -
+          div(id="form-wrapper")
+            select(class="form-select shadow" name="item")
+              option(value="fish") Fish
+              option(value="soup") Soup
+              option(value="quiche") Quiche
+          div(id="form-wrapper")
+            button(class="nav-child" type="submit", form="select-daily-item-form") Continue
+    include footer.pug

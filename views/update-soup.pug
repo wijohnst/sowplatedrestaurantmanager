@@ -1,0 +1,25 @@
+doctype html
+html(land='en')
+  include head.pug
+body
+  div(class="content")
+    include header.pug
+    div(id='display-container-soup')
+      div(class='display-card-child')
+        div(class='card shadow' id='fish-facts-container')
+          div(class='card justify-center secondary-color gray')
+            h1 Current 
+          div(class='card justify-center')
+            h2 #{activeSoup}
+          //- div(class='card shadow' id='fish-facts-container')
+          form(action="/updateDailyItems/soup", method="post", id="soup-update-submit")
+            div(class='card justify-center secondary-color gray')
+              h1 - Select Replacement Soup -
+            div(id="form-wrapper")
+              select(class="form-select shadow" name="soup")
+                -for(let index in inactiveSoups)
+                  option(value=inactiveSoups[index].name) #{inactiveSoups[index].name}
+                option(value='new') #{`>>ADD NEW SOUP<<`}
+          button(class="nav-child", type="submit", form="soup-update-submit") Update
+    include footer.pug
+

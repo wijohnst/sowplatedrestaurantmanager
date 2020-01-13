@@ -15,7 +15,7 @@ body
             h3 Allergies:
             div(class='card allergy-container' id='soup-allergies')
               -for (let allergy in soup.allergies)
-                span(class='icon' id='egg') 
+                p  - #{soup.allergies[allergy]} -
       div(class='display-card-child')
         div(class='daily-items-content')
           div(class='card shadow' id='fish-facts-container')
@@ -28,7 +28,7 @@ body
             h3 Allergies:
             div(class='card allergy-container' id='quiche-allergies')
               -for (let allergy in quiche.allergies)
-                span(class='icon' id='egg') 
+                p - #{quiche.allergies[allergy]} -
       div(class='display-card-child')
         div(class='display-card-child')
           div(class='daily-items-content')
@@ -49,6 +49,5 @@ body
                 h3 Population:
               div(class='card fish-fact-card')
                 p #{fishFacts.population}
-
+      include nav-view.pug
   script(src="/javascripts/viewSwitcher.js")
-  //- include footer.pug
